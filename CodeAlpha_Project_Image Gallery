@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Wings of Wonder</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+            
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Welcome to Wings of Wonder</h1>
+        <p>A Majestic Exploration of the World's Most Unique Bird Species.</p>
+    </section>
+ 
+    
+    <h1>Image Gallery</h1>
+    <div class="gallery-container">
+        <div class="gallery-thumbnails">
+            
+            <div class="thumbnail" onclick="openLightbox(0)">
+                <img src="images.jpeg" alt="Image ">
+            </div>
+            <div class="thumbnail" onclick="openLightbox(1)">
+                <img src="images (1).jpeg" alt="Image 1">
+            </div>
+            <div class="thumbnail" onclick="openLightbox(2)">
+                <img src="images (2).jpeg" alt="Image 2">
+            </div>
+
+            <div class="thumbnail" onclick="openLightbox(3)">
+                <img src="images (3).jpeg" alt="Image 3">
+            </div>
+            <div class="thumbnail" onclick="openLightbox(4)">
+                <img src="images (4).jpeg" alt="Image 4"><br>
+            </div><br>
+
+
+            <div class="thumbnail" onclick="openLightbox(5)">
+                <img src="images (5).jpeg" alt="Image 5">
+            </div>
+     </div>
+</div>
+<div class="gallery-container">
+    <div class="gallery-thumbnails">
+
+            <div class="thumbnail" onclick="openLightbox(6)">
+                <img src="download.jpeg" alt="Image 6">
+            </div>
+            <div class="thumbnail" onclick="openLightbox(7)">
+                <img src="download (1).jpeg" alt="Image 7">
+            </div>
+            <div class="thumbnail" onclick="openLightbox(8)">
+                <img src="download (2).jpeg" alt="Image 8">
+            </div>
+            <div class="thumbnail" onclick="openLightbox(9)">
+                <img src="download (3).jpeg" alt="Image 9">
+            </div>
+            <div class="thumbnail" onclick="openLightbox(8)">
+                <img src="download (2).jpeg" alt="Image 8">
+            </div>
+            <div class="thumbnail" onclick="openLightbox(9)">
+                <img src="download (3).jpeg" alt="Image 9">
+            </div>
+            <!-- Add more thumbnails as needed -->
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="Large Image">
+            <div id="caption"></div>
+            <div class="navigation">
+                <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+                <span class="next" onclick="changeImage(1)">&#10095;</span>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <section class="categories" id="categories"></section>
+        <h1>categories</h>
+        <div class="categories-container">
+            <div class="bird">
+                <img src="download (1).jpeg" alt="pigeons ">
+                <h4>Pigeons </h4>
+                <p>"City streets become home to gentle wings, gliding in harmony above bustling life.
+                    Feathers of gray tell stories untold, of freedom found in every corner's sky."</p>
+            </div>
+            <div class="bird">
+                <img src="download (2).jpeg" alt="Love birds">
+                <h4>Love birds</h4>
+                <p>"Two hearts, one melody, perched together in a symphony of warmth and devotion.
+                    Their colors blend like a gentle sunset, painting the sky with whispers of forever."  </p>
+            </div>
+            <div class="bird">
+                <img src="download (3).jpeg" alt="Peacock">
+                <h4>Peacock</h4>
+              <p> "Feathers unfurl like iridescent dreams, a spectacle of emerald and sapphire hues.
+                A regal dancer, painting the air with splendor that words dare not name."</p>
+            </div>
+
+           
+        </div>
+    </section>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color:teal;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #8d1e59;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url("download\ \(1\).jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero p {
+    font-size: 24px;
+}
+
+
+
+h1{
+    color: aqua;
+    text-align: center;
+}
+
+.gallery{
+    background-image: url("download\ \(1\).jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.gallery h1 {
+    font-size: 48px;
+}
+
+.gallery p {
+    font-size: 24px;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.gallery-thumbnails {
+    display: flex;
+  
+    gap: 10px;
+}
+
+.thumbnail {
+    flex: 0 0 auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.thumbnail img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.lightbox.show {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content {
+    position: relative;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.lightbox img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#caption {
+    margin-top: 15px;
+    color: #ccc;
+    font-size: 18px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(-50%);
+}
+
+.prev, .next {
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 16px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+    .thumbnail img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .lightbox-content {
+        width: 90%;
+    }
+}
+
+
+
+.categories {
+    padding: 50px 20px;
+    background-color: peachpuff;
+    text-align: center;
+}
+
+.categories h2 {
+    margin-bottom: 30px;
+}
+
+.categories-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.bird {
+    margin: 10px;
+    width: 300px;
+    text-align: left;
+}
+
+.bird img {
+    width: 100%;
+    border-radius: 10px;
+    
+}
+
+.bird h3 {
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.bird p {
+    font-size: 16px;
+    color: #555;
+}
+
+footer p{
+    text-align: center;
+}
+</style>
+    <footer>
+        <p>&copy; 2024 Image Gallery. All rights reserved.</p>
+    </footer>
+
+    <script>
+let currentImageIndex = 0;
+const images = [
+
+    {
+        src: "images.jpeg",
+        caption: 'Sparrow'
+    },
+    {
+        src: "images (1).jpeg",
+        caption: 'Pigeons'
+    },
+    {
+        src: "images (2).jpeg",
+        caption: 'Falcon'
+    },
+
+    {
+        src: "images (3).jpeg",
+        caption: 'Woodpecker'
+    },
+    {
+        src: "images (4).jpeg",
+        caption: 'Macaw'
+    },
+    {
+        src: "images (5).jpeg",
+        caption: 'Owl'
+    },
+
+    {
+        src: "download.jpeg",
+        caption: 'Parrot'
+    },
+    {
+        src: "download (1).jpeg",
+        caption: 'Dove'
+    },
+    {
+        src: "download (2).jpeg",
+        caption: 'Love birds'
+    },
+
+    {
+        src: "download (3).jpeg",
+        caption: 'Peacock'
+    },
+    // Add more images and captions as needed
+];
+
+function openLightbox(index) {
+    currentImageIndex = index;
+    updateLightbox();
+    document.getElementById('lightbox').classList.add('show');
+    document.addEventListener('keydown', handleKeydown);
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('show');
+    document.removeEventListener('keydown', handleKeydown);
+}
+
+function changeImage(direction) {
+    currentImageIndex += direction;
+    if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+    } else if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+    }
+    updateLightbox();
+}
+
+function updateLightbox() {
+    const imageElement = document.getElementById('lightbox-image');
+    const captionElement = document.getElementById('caption');
+    imageElement.src = images[currentImageIndex].src;
+    captionElement.textContent = images[currentImageIndex].caption;
+}
+
+function handleKeydown(event) {
+    if (event.key === 'ArrowRight') {
+        changeImage(1);
+    } else if (event.key === 'ArrowLeft') {
+        changeImage(-1);
+    } else if (event.key === 'Escape') {
+        closeLightbox();
+    }
+}</script>
+</body>
+</html>
